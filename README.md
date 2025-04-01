@@ -1,5 +1,7 @@
 # SpendLimit Landing Page
 
+🌐 **[Visit Live Website](https://hamanto-studio.github.io/spend-limit-lp/)**
+
 A modern, responsive landing page for SpendLimit - an AI-powered expense tracking app that works offline.
 
 ## 🌟 Features
