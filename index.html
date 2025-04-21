@@ -18,519 +18,157 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #1a1a1a;
-            background-color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            flex: 1;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #000 0%, #333 100%);
-            color: white;
+        /* Main Content */
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
             padding: 4rem 0;
-            text-align: center;
-            position: relative;
-            overflow: visible;
+            min-height: calc(100vh - 100px);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        .content-left {
+            flex: 1;
+        }
+
+        .content-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .app-logo {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1.5rem;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 2rem;
+            -webkit-user-drag: none;
         }
 
-        .hero h1 {
+        h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
         }
 
-        .hero p {
+        .tagline {
             font-size: 1.4rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 1.5rem auto;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 500px;
         }
 
-        .store-buttons {
+        .stats-row {
             display: flex;
-            justify-content: center;
+            gap: 3rem;
             margin: 2rem 0;
         }
 
+        .stat-item {
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.5rem;
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+        }
+
         .store-button {
-            display: inline-flex;
-            align-items: center;
-            height: 40px; /* Following Apple's minimum height requirement */
-            transition: opacity 0.2s ease;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: transform 0.2s ease;
         }
 
         .store-button:hover {
-            opacity: 0.9;
+            transform: scale(1.02);
         }
 
         .store-button img {
-            height: 100%;
+            height: 48px;
             width: auto;
+            -webkit-user-drag: none;
+        }
+
+        .email-signup {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        input[type="email"] {
+            flex: 1;
+            padding: 0.8rem 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input[type="email"]:focus {
+            border-color: #000;
+        }
+
+        .join-button {
+            padding: 0.8rem 1.5rem;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .join-button:hover {
+            background: #333;
+        }
+
+        .app-screenshots {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            width: 100%;
+            max-width: 300px;
         }
 
         .app-screenshot {
             max-width: 100%;
             height: auto;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            margin: 2rem auto;
-            display: block;
-            padding: 0;
-            background: transparent !important;
+            -webkit-user-drag: none;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
         }
 
-        /* Features Section */
-        .features {
-            padding: 6rem 0;
-            background-color: #f8f9fa;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* How It Works Section - Updated Styles */
-        .how-it-works {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            overflow: hidden;
-        }
-
-        .steps-container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            position: relative;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .step {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            text-align: left;
-            transition: all 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-        }
-
-        .step-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            gap: 1rem;
-        }
-
-        .step-number {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #666;
-            background: #f8f9fa;
-            padding: 0.5rem 1rem;
-            border-radius: 12px;
-        }
-
-        .step-icon {
-            width: 48px;
-            height: 48px;
-            background: #000;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .step h3 {
-            color: #000;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .step p {
-            color: #666;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .step-image-container {
-            position: relative;
-            width: 100%;
-            height: 320px;
-            border-radius: 16px;
-            overflow: hidden;
-            background: #f8f9fa;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            margin-top: auto;
-        }
-
-        .step-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .step:hover .step-image {
-            transform: scale(1.05);
-        }
-
-        .steps-connection {
-            position: absolute;
-            top: 40%;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, #000 50%, transparent 100%);
-            z-index: 1;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background-color: #f8f9fa;
-            padding: 6rem 0;
-            overflow: hidden;
-        }
-
-        .testimonial-container {
-            position: relative;
-            width: 100%;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
-        }
-
-        .testimonial-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-
-        .testimonial-grid {
-            display: flex;
-            gap: 2rem;
-            padding: 2rem;
-            width: max-content;
-            animation: scroll 30s linear infinite;
-        }
-
-        .testimonial-grid:hover {
-            animation-play-state: paused;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            width: 300px;
-            flex-shrink: 0;
-            scroll-snap-align: start;
-        }
-
-        .testimonial-card p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-card cite {
-            display: block;
-            font-style: italic;
-            color: #666;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-300px * 3 - 6rem));
-            }
-        }
-
-        /* FAQ Accordion */
-        .faq {
-            padding: 6rem 0;
-        }
-
-        .faq-item {
-            margin-bottom: 1rem;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            background: white;
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .faq-question:hover {
-            background-color: #f8f9fa;
-        }
-
-        .faq-question h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: #1a1a1a;
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            font-weight: 300;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-answer {
-            background: white;
-            padding: 0 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            opacity: 0;
-        }
-
-        .faq-item input[type="checkbox"] {
-            display: none;
-        }
-
-        .faq-item input[type="checkbox"]:checked + .faq-question {
-            border-radius: 12px 12px 0 0;
-            background-color: #f8f9fa;
-        }
-
-        .faq-item input[type="checkbox"]:checked + .faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-item input[type="checkbox"]:checked ~ .faq-answer {
-            max-height: 200px;
-            padding: 1.5rem;
-            opacity: 1;
-        }
-
-        /* Footer */
         footer {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 4rem 0;
+            padding: 2rem 0;
             text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .social-link {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
-
-        .social-link:hover {
-            opacity: 0.8;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .hero {
-                padding: 3rem 0;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-                margin: 1rem auto;
-            }
-
-            .app-logo {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 1rem;
-            }
-
-            .app-screenshot {
-                margin: 1.5rem auto;
-                border-radius: 16px;
-            }
-
-            .store-buttons {
-                margin: 1.5rem 0;
-            }
-
-            .steps {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .steps-connection {
-                display: none;
-            }
-
-            .step {
-                margin-bottom: 1.5rem;
-            }
-
-            .step-image-container {
-                height: 220px;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 390px) {
-            /* iPhone 12 specific adjustments */
-            .hero {
-                padding: 2rem 0;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-                padding: 0 1rem;
-            }
-
-            .app-screenshot {
-                width: 90%;
-                margin: 1rem auto;
-            }
-
-            .store-button {
-                height: 35px;
-            }
-
-            .step {
-                padding: 1.5rem;
-            }
-
-            .step-icon {
-                width: 48px;
-                height: 48px;
-                font-size: 1.5rem;
-            }
-
-            .step-image {
-                max-width: 160px;
-            }
-
-            .step-image-container {
-                height: 180px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Update these styles */
-        .hero-screenshots {
-            position: relative;
-            width: 100%;
-            margin: 3rem auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            padding: 2rem;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .screenshot-container {
-            position: relative;
-            width: 300px;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-            padding: 0.5rem;
-        }
-
-        .screenshot-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            background: transparent !important;
-            transition: transform 0.3s ease;
-            object-fit: contain;
-            max-height: none;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid rgba(0,0,0,0.1);
         }
 
         @media (max-width: 968px) {
@@ -538,157 +176,301 @@
                 padding: 1.5rem;
             }
 
-            .hero-screenshots {
-                justify-content: flex-start;
-                gap: 1.5rem;
-                padding: 1.5rem 0;
+            .main-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 0;
+                gap: 2rem;
             }
 
-            .screenshot-container {
-                width: 260px;
-                padding: 0.25rem;
-            }
-        }
-
-        @media (max-width: 390px) {
-            .container {
-                padding: 1rem;
+            .content-left {
+                order: 1;
             }
 
-            .screenshot-container {
-                width: 240px;
-                padding: 0.25rem;
-            }
-
-            .hero-screenshots {
+            .content-right {
+                order: 2;
                 padding: 1rem 0;
-                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+                margin: 1rem auto;
+            }
+
+            .stats-row {
+                justify-content: center;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.4rem;
+            }
+
+            .app-screenshots {
+                max-width: 240px;
+            }
+
+            .store-button img {
+                height: 40px;
             }
         }
 
         @media (max-width: 480px) {
-            .features-grid {
-                grid-template-columns: 1fr;
+            .container {
+                padding: 1rem;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .main-content {
+                padding: 1rem 0;
+                gap: 1.5rem;
+            }
+
+            .content-left, .content-right {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+
+            .stats-row {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .app-screenshots {
+                max-width: 200px;
             }
         }
 
-        /* Add these CTA styles */
-        .cta {
-            background: linear-gradient(135deg, #000 0%, #333 100%);
-            color: white;
-            padding: 8rem 0;
-            position: relative;
-            overflow: hidden;
+        @media (max-width: 380px) {
+            .container {
+                padding: 0.75rem;
+            }
         }
 
-        .cta::before {
+        @media (max-width: 320px) {
+            .app-screenshots {
+                max-width: 180px;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+        }
+
+        @media (max-height: 600px) and (orientation: landscape) {
+            .main-content {
+                flex-direction: row;
+                gap: 2rem;
+                padding: 1rem 0;
+            }
+
+            .content-left, .content-right {
+                flex: 1;
+            }
+
+            .app-screenshots {
+                max-width: 200px;
+            }
+        }
+
+        /* Reviews */
+        .reviews {
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            margin: 2rem auto;
+            position: relative;
+            height: 90px;
+        }
+
+        .reviews::before,
+        .reviews::after {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
-        }
-
-        .cta .container {
-            position: relative;
+            width: 60px;
+            height: 100%;
             z-index: 2;
-            text-align: center;
+            pointer-events: none;
         }
 
-        .cta h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
+        .reviews::before {
+            left: 0;
+            background: linear-gradient(to right, #f8f9fa 0%, transparent 100%);
         }
 
-        .cta-features {
+        .reviews::after {
+            right: 0;
+            background: linear-gradient(to left, #f8f9fa 0%, transparent 100%);
+        }
+
+        .review-track {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2.5rem 0;
-            flex-wrap: wrap;
+            gap: 1rem;
+            animation: scroll 25s linear infinite;
+            width: max-content;
+            padding: 0 1rem;
+            margin: 0 auto;
         }
 
-        .cta-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-200px * 3 - 3rem));
+            }
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
+            padding: 0.8rem;
+            border-radius: 10px;
+            min-width: 200px;
+            max-width: 200px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        .cta-feature:hover {
-            transform: translateY(-3px);
-            background: rgba(255,255,255,0.15);
+        .review-text {
+            font-size: 0.8rem;
+            line-height: 1.3;
+            color: #333;
+            margin-bottom: 0.4rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .cta-feature span {
-            font-size: 1.1rem;
+        .review-author {
+            font-size: 0.75rem;
+            color: #666;
             font-weight: 500;
         }
 
-        .cta .store-buttons {
-            margin-top: 3rem;
+        .review-track:hover {
+            animation-play-state: paused;
         }
 
-        .cta .store-button {
-            transform: scale(1.2);
-            transition: all 0.3s ease;
-        }
-
-        .cta .store-button:hover {
-            transform: scale(1.25);
+        @media (max-width: 968px) {
+            .reviews {
+                max-width: 600px;
+                margin: 1rem auto;
+                height: 80px;
+            }
         }
 
         @media (max-width: 768px) {
-            .cta {
-                padding: 6rem 0;
+            .reviews {
+                max-width: 400px;
             }
 
-            .cta h2 {
-                font-size: 2.2rem;
+            .review-card {
+                min-width: 140px;
+                max-width: 140px;
+                padding: 0.6rem;
             }
 
-            .cta-features {
-                gap: 1rem;
+            .review-text {
+                font-size: 0.75rem;
+                line-height: 1.2;
+                margin-bottom: 0.3rem;
             }
 
-            .cta-feature {
-                padding: 0.8rem 1.2rem;
-                font-size: 0.9rem;
+            .review-author {
+                font-size: 0.7rem;
+            }
+
+            .reviews::before,
+            .reviews::after {
+                width: 30px;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-140px * 3 - 3rem));
+                }
             }
         }
 
         @media (max-width: 480px) {
-            .cta h2 {
-                font-size: 1.8rem;
+            .reviews {
+                max-width: 300px;
+                height: 75px;
             }
 
-            .cta-features {
-                flex-direction: column;
-                align-items: center;
+            .review-card {
+                min-width: 130px;
+                max-width: 130px;
+                padding: 0.5rem;
+            }
+
+            .review-text {
+                font-size: 0.7rem;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-130px * 3 - 3rem));
+                }
+            }
+        }
+
+        @media (max-width: 380px) {
+            .reviews {
+                max-width: 260px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <img src="app-icon.png" alt="SpendLimit Logo" class="app-logo">
-            <h1>SpendLimit</h1>
-            <p>Smart Expense Tracking, No Effort Needed!</p>
-            <p class="tagline">Snap a receipt, let AI do the work – all offline!</p>
-            <div class="store-buttons">
+    <div class="container">
+        <main class="main-content">
+            <div class="content-left">
+                <img src="app-icon.png" alt="SpendLimit Logo" class="app-logo">
+                <h1>SpendLimit</h1>
+                <p class="tagline">A clean, simple way to track your expenses and help you save more every day.</p>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-number" id="userCount">0</div>
+                        <div class="stat-label">Happy Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="savingsCount">0</div>
+                        <div class="stat-label">Total Spending Saved</div>
+                    </div>
+                </div>
                 <a href="https://apps.apple.com/id/app/spendlimit-expense-tracker/id6743368554" 
                    class="store-button" 
                    target="_blank" 
@@ -696,256 +478,75 @@
                     <img src="app-store.svg.webp" alt="Download on the App Store">
                 </a>
             </div>
-            <div class="hero-screenshots">
-                <div class="screenshot-container">
-                    <img src="app-screenshot.png" 
-                         alt="SpendLimit Main Interface" 
-                         loading="lazy">
+            <div class="content-right">
+                <div class="app-screenshots">
+                    <img src="app-screenshot.png" alt="SpendLimit App Interface" class="app-screenshot">
                 </div>
-                <div class="screenshot-container">
-                    <img src="app-screenshot-step1.png" 
-                         alt="Step 1: Receipt Scanning" 
-                         loading="lazy">
+            </div>
+        </main>
+
+        <!-- Reviews Section -->
+        <div class="reviews">
+            <div class="review-track">
+                <!-- Original reviews -->
+                <div class="review-card">
+                    <p class="review-text">"Really inspiring app! Perfect for tracking."</p>
+                    <p class="review-author">— faawwaaiidd</p>
                 </div>
-                <div class="screenshot-container">
-                    <img src="app-screenshot-step2.png" 
-                         alt="Step 2: AI Processing" 
-                         loading="lazy">
+                <div class="review-card">
+                    <p class="review-text">"Super helpful for budgeting. Love it!"</p>
+                    <p class="review-author">— bella</p>
                 </div>
-                <div class="screenshot-container">
-                    <img src="app-screenshot-step3.png" 
-                         alt="Step 3: Expense Dashboard" 
-                         loading="lazy">
+                <div class="review-card">
+                    <p class="review-text">"Works offline and completely free!"</p>
+                    <p class="review-author">— di.az</p>
+                </div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="review-card">
+                    <p class="review-text">"Really inspiring app! Perfect for tracking."</p>
+                    <p class="review-author">— faawwaaiidd</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"Super helpful for budgeting. Love it!"</p>
+                    <p class="review-author">— bella</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"Works offline and completely free!"</p>
+                    <p class="review-author">— di.az</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2>Why SpendLimit? 🔥</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📸</div>
-                    <h3>Snap & Track</h3>
-                    <p>Take a photo, and AI extracts expenses instantly</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Offline & Private</h3>
-                    <p>No data leaves your phone, 100% privacy guaranteed</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💳</div>
-                    <h3>Multi-Payment Support</h3>
-                    <p>Works for cash, e-wallets, & cards</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>No Manual Input</h3>
-                    <p>Forget spreadsheets & typing</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Smart Budgeting</h3>
-                    <p>Stay on track without effort</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Auto Categories</h3>
-                    <p>AI automatically sorts expenses by type</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="steps-container">
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-header">
-                            <div class="step-number">01</div>
-                            <div class="step-icon">📸</div>
-                        </div>
-                        <h3>Snap Receipt</h3>
-                        <p>Just take a photo of any receipt with your phone's camera. No internet needed!</p>
-                        <div class="step-image-container">
-                            <img src="app-screenshot-step1.png" 
-                                 alt="Taking photo of receipt" 
-                                 class="step-image"
-                                 loading="lazy"
-                                 onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-header">
-                            <div class="step-number">02</div>
-                            <div class="step-icon">🤖</div>
-                        </div>
-                        <h3>AI Magic</h3>
-                        <p>Our AI instantly extracts all details and categorizes your expense, right on your device.</p>
-                        <div class="step-image-container">
-                            <img src="app-screenshot-step2.png" 
-                                 alt="AI processing receipt" 
-                                 class="step-image"
-                                 loading="lazy"
-                                 onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-header">
-                            <div class="step-number">03</div>
-                            <div class="step-icon">💡</div>
-                        </div>
-                        <h3>Track & Save</h3>
-                        <p>View insights and stay on top of your spending goals with beautiful charts and reports.</p>
-                        <div class="step-image-container">
-                            <img src="app-screenshot-step3.png" 
-                                 alt="Expense tracking dashboard" 
-                                 class="step-image"
-                                 loading="lazy"
-                                 onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Users Say</h2>
-            <div class="testimonial-container">
-                <div class="testimonial-grid">
-                    <div class="testimonial-card">
-                        <p>"Finally, an expense tracker that works without internet & subscriptions!"</p>
-                        <cite>- Sarah K.</cite>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"SpendLimit made tracking my multiple payment methods so much easier!"</p>
-                        <cite>- Michael R.</cite>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Love how it automatically categorizes my expenses. Such a time-saver!"</p>
-                        <cite>- David W.</cite>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"The offline-first approach gives me peace of mind about my financial data."</p>
-                        <cite>- Emma P.</cite>
-                    </div>
-                    <!-- Duplicate first three cards for seamless infinite scroll -->
-                    <div class="testimonial-card">
-                        <p>"Finally, an expense tracker that works without internet & subscriptions!"</p>
-                        <cite>- Sarah K.</cite>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"SpendLimit made tracking my multiple payment methods so much easier!"</p>
-                        <cite>- Michael R.</cite>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Love how it automatically categorizes my expenses. Such a time-saver!"</p>
-                        <cite>- David W.</cite>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <input type="checkbox" id="faq1">
-                <label class="faq-question" for="faq1">
-                    <h3>Do I need an internet connection?</h3>
-                </label>
-                <div class="faq-answer">
-                    <p>Nope, it's fully offline! SpendLimit works completely without internet, ensuring you can track your expenses anywhere, anytime.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <input type="checkbox" id="faq2">
-                <label class="faq-question" for="faq2">
-                    <h3>Is my data safe?</h3>
-                </label>
-                <div class="faq-answer">
-                    <p>100% private, stored only on your phone. We take your privacy seriously - your financial data never leaves your device.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <input type="checkbox" id="faq3">
-                <label class="faq-question" for="faq3">
-                    <h3>Does it work for all payment types?</h3>
-                </label>
-                <div class="faq-answer">
-                    <p>Yes! Cash, cards, e-wallets—all covered. SpendLimit is designed to handle any payment method you use, making it perfect for tracking all your expenses in one place.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <input type="checkbox" id="faq4">
-                <label class="faq-question" for="faq4">
-                    <h3>How accurate is the AI receipt scanning?</h3>
-                </label>
-                <div class="faq-answer">
-                    <p>Our AI is highly accurate and continuously improving. It can extract details from most receipt formats and automatically categorizes your expenses with impressive precision.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="cta">
-        <div class="container">
-            <h2>Take Control of Your Spending Today!</h2>
-            <div class="cta-features">
-                <div class="cta-feature">
-                    <div>✨</div>
-                    <span>No Signups</span>
-                </div>
-                <div class="cta-feature">
-                    <div>🔒</div>
-                    <span>100% Private</span>
-                </div>
-                <div class="cta-feature">
-                    <div>⚡️</div>
-                    <span>Works Offline</span>
-                </div>
-                <div class="cta-feature">
-                    <div>🎯</div>
-                    <span>Free Forever</span>
-                </div>
-            </div>
-            <div class="store-buttons">
-                <a href="https://apps.apple.com/id/app/spendlimit-expense-tracker/id6743368554" 
-                   class="store-button" 
-                   target="_blank" 
-                   rel="noopener">
-                    <img src="app-store.svg.webp" alt="Download on the App Store">
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="mailto:www.robivpn@gmail.com" class="social-link">📧 Email Support</a>
-                <a href="https://twitter.com/robihamanto" class="social-link">🐦 Twitter</a>
-                <a href="https://instagram.com/robihamanto" class="social-link">📸 Instagram</a>
-            </div>
-            <p>&copy; 2025 Hamanto Studio. All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 Hamanto Studio</p>
     </footer>
+
+    <script>
+        // Animated counter function
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current).toLocaleString();
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target.toLocaleString();
+                }
+            };
+            
+            updateCounter();
+        }
+
+        // Start animation when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            animateCounter(document.getElementById('userCount'), 1094);
+            animateCounter(document.getElementById('savingsCount'), 2726);
+        });
+    </script>
 </body>
 </html>
