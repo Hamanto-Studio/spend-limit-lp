@@ -1,95 +1,64 @@
-# Hamanto Studio Landing Page
+# SpendLimit Landing Page
 
-🌐 **[Visit Live Website](https://hamanto-studio.github.io/lp/)**
+🌐 **[Visit Live Website](https://hamanto-studio.github.io/spend-limit-lp/)**
 
-A modern, responsive landing page showcasing Hamanto Studio's collection of innovative apps with a mesmerizing space theme and interactive black hole animation.
+A modern, responsive landing page for SpendLimit - an AI-powered expense tracking app that works offline.
 
 ## 🌟 Features
 
-- **Responsive Design**
-  - Works seamlessly across all devices
-  - Optimized for mobile, tablet, and desktop
-  - Adaptive layouts and typography
+- Responsive design that works across all devices
+- Modern UI with smooth animations and transitions
+- Optimized images and lazy loading for better performance
+- Smart App Banner integration for iOS users
+- SEO-friendly with proper meta tags
+- Cross-browser compatible
 
-- **Space Theme**
-  - Interactive black hole animation
-  - Dynamic particle effects
-  - Smooth gradient backgrounds
-  - Realistic space-like atmosphere
+## 📱 App Store Link
 
-- **Modern UI Elements**
-  - Glassmorphism design
-  - Smooth animations and transitions
-  - Hover effects and interactions
-  - Backdrop filters and blur effects
-
-- **Performance**
-  - Optimized animations
-  - Efficient particle system
-  - Fast loading times
-  - Cross-browser compatibility
-
-## 📱 Featured Apps
-
-1. **Halalin**
-   - Find halal products, restaurants, and prayer places in Taiwan
-   - Comprehensive halal guide for Taiwan
-   - User-friendly interface
-   - [Visit Halalin](https://halalin.co)
-
-2. **SpendLimit**
-   - Smart expense tracking with AI
-   - Offline-first functionality
-   - Privacy-focused design
-   - [Visit SpendLimit](https://hamanto-studio.github.io/spend-limit-lp/)
+SpendLimit is available on the App Store:
+[Download SpendLimit](https://apps.apple.com/id/app/spendlimit-expense-tracker/id6743368554)
 
 ## 🛠 Tech Stack
 
-- **HTML5**
-  - Semantic markup
-  - SEO-friendly structure
-  - Accessibility features
-
-- **CSS3**
-  - Flexbox and Grid layouts
-  - CSS Variables for theming
-  - Media queries for responsiveness
-  - Advanced animations and transitions
-  - Backdrop filters and effects
-  - CSS Gradients and transforms
-
-- **JavaScript**
-  - Vanilla JS for animations
-  - Dynamic counters
-  - Particle system
-  - Event handling
-  - DOM manipulation
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Modern CSS Features:
+  - Flexbox
+  - CSS Grid
+  - CSS Variables
+  - Media Queries
+  - Animations
+  - Backdrop Filter
 
 ## 📂 Project Structure
 
 ```text
-landingpage/
+spendlimit/
 ├── index.html              # Main HTML file
 ├── README.md              # Project documentation
-├── hamanto-studio-icon.png # Studio icon
+├── app-icon.png           # App icon
 ├── favicon.png            # Website favicon
-├── halalin-icon.png       # Halalin app icon
-└── spend-limit-icon.png   # SpendLimit app icon
+├── app-store.svg.webp     # App Store button
+├── app-screenshot.png     # Main app screenshot
+├── app-screenshot-step1.png # Step 1 screenshot
+├── app-screenshot-step2.png # Step 2 screenshot
+└── app-screenshot-step3.png # Step 3 screenshot
 ```
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**
+1. Clone the repository
 ```bash
 git clone <repository-url>
 ```
 
-2. **Navigate to the project directory**
+2. Navigate to the project directory
 ```bash
-cd landingpage
+cd spendlimit
 ```
 
-3. **Open in browser or use a local server**
+3. Open `index.html` in your browser or use a local server
 ```bash
 # Using Python
 python -m http.server 8000
@@ -98,77 +67,65 @@ python -m http.server 8000
 npx serve
 ```
 
+## 📱 Smart App Banner
+
+The website includes a Smart App Banner for iOS users with the following configuration:
+
+```html
+<meta name="apple-itunes-app" content="app-id=6743368554">
+```
+
 ## 🎨 Key Sections
 
-1. **Header**
-   - Studio logo with rotation animation
-   - Fixed position with blur effect
-   - Responsive navigation
+1. Hero Section
+   - App introduction
+   - App Store download button
+   - Interactive screenshots gallery
 
-2. **Hero Section**
-   - Compelling headline
-   - Descriptive subheading
-   - Fade-in animations
-   - Space-themed background
-
-3. **Stats Section**
-   - Animated user counter (42,253+ users)
-   - Active apps counter
-   - Glassmorphism cards
-   - Gradient dividers
-
-4. **Apps Showcase**
-   - Interactive app cards
+2. Features Section
+   - 6 key features with icons
+   - Responsive grid layout
    - Hover animations
-   - Glassmorphism effect
-   - Direct app links
-   - App descriptions
 
-5. **Footer**
-   - Company information
-   - Dynamic copyright year
-   - Location details
-   - Clean, minimal design
+3. How It Works
+   - 3-step process explanation
+   - Interactive cards
+   - Screenshot demonstrations
+
+4. Testimonials
+   - Auto-scrolling testimonials
+   - Pause on hover
+   - Responsive design
+
+5. FAQ Section
+   - Expandable questions
+   - Smooth animations
+   - Mobile-friendly layout
+
+6. CTA Section
+   - Gradient background
+   - Feature highlights
+   - Download button
 
 ## 📱 Responsive Breakpoints
 
-- **Desktop**: 1400px and above
-  - Full layout
-  - Maximum animations
-  - Optimal spacing
-
-- **Tablet**: 768px to 1399px
-  - Adjusted spacing
-  - Optimized animations
-  - Maintained layout
-
-- **Mobile**: Below 768px
-  - Stacked layout
-  - Simplified animations
-  - Touch-friendly spacing
-
-- **Small Mobile**: Below 390px
-  - Compact design
-  - Essential animations
-  - Optimized for small screens
+- Desktop: 1400px and above
+- Tablet: 768px to 1399px
+- Mobile: Below 768px
+- Small Mobile: Below 390px
 
 ## 🔍 SEO
 
-- **Meta Tags**
-  - Title tag
-  - Meta description
-  - Viewport settings
-  - Character encoding
-
-- **Semantic Structure**
-  - Proper heading hierarchy
-  - Alt text for images
-  - ARIA labels
-  - Semantic HTML elements
+The landing page includes essential meta tags for SEO:
+- Title tag
+- Meta description
+- Proper heading hierarchy
+- Alt text for images
+- Semantic HTML structure
 
 ## 📄 License
 
-© 2024 Hamanto Studio. All rights reserved.
+© 2025 Hamanto Studio. All rights reserved.
 
 ## 👨‍💻 Developer
 
